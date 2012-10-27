@@ -1,0 +1,67 @@
+ ------
+ Introduction
+ ------
+ tw
+ ------
+ 2012-06-03
+ ------
+
+
+JIRA Maven Plugin
+
+  First of all. If you dont be sure the plugins configuration is correct, then simply
+  set jiraSkipCreation to true (look at the example at the bottom). The plugin will
+  write out to the log what it would have done, but does in fact nothing else.
+
+* Why should I use it?
+
+  If you manage your development using Jira then you probably have some kind of synchronization
+  between your softwares version and the corresponding version in Jira. This plugin helps you to
+  minimize your configuration overhead. It simply creates new versions in Jira corresponding to
+  your softwares version and releases this version if you release your software. The same works
+  even for new Jira projects.
+
+  After realizing it is not possible to give components in Jira different versions in one
+  project my solution to this problem is to construct a version name out of my software components name and
+  its version. Therefore I have more open versions in one project beeing developed in parallel.
+
+  e.g. versions: Component_A_1.1 Component_B_2.3
+
+  Using this plugin I have only to deploy, because thats the default phase, or release my software 
+  to maintain my Jira project.
+  
+  Nice. Isn't it? 
+
+* Goals Overview
+
+  General information about the goals.
+
+  * {{{plugin-info.html}jira:create-new-project}} create a new project in JIRA
+
+  * {{{plugin-info.html}jira:create-new-version}} create a new version in JIRA
+
+  * {{{plugin-info.html}jira:release-version}} release a version in JIRA
+
+  * {{{plugin-info.html}jira:archive-version}} archive a version in JIRA
+
+
+* Usage
+
+  General instructions on how to use the Plugin Name can be found on the {{{usage.html}usage page}}. Some more
+  specific use cases are described in the examples given below. Last but not least, users occasionally contribute
+  additional examples, tips or errata to the
+  {{{http://docs.codehaus.org/display/MAVENUSER/Plugin+Name}plugin's wiki page}}.
+
+  In case you still have questions regarding the plugin's usage, please have a look at the {{{faq.html}FAQ}} and feel
+  free to contact the {{{mail-lists.html}user mailing list}}. The posts to the mailing list are archived and could
+  already contain the answer to your question as part of an older thread. Hence, it is also worth browsing/searching
+  the {{{mail-lists.html}mail archive}}.
+
+  If you feel like the plugin is missing a feature or has a defect, you can fill a feature request or bug report in our
+  {{{issue-tracking.html}issue tracker}}. When creating a new issue, please provide a comprehensive description of your
+  concern. Especially for fixing bugs it is crucial that the developers can reproduce your problem. For this reason,
+  entire debug logs, POMs or most preferably little demo projects attached to the issue are very much appreciated.
+  Of course, patches are welcome, too. Contributors can check out the project from our
+  {{{source-repository.html}source repository}} and will find supplementary information in the
+  {{{http://maven.apache.org/guides/development/guide-helping.html}guide to helping with Maven}}. 
+

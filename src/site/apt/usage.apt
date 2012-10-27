@@ -1,0 +1,51 @@
+ ------
+ usage
+ ------
+ tw
+ ------
+ 2012-06-10
+ ------
+
+Usage
+
+  There are no standard goals. To use this plugin you must create a configuration like below
+  in your projects pom.xml.
+
+Example Configuration
+
+  This is an example configuration. You do not need a special profile, when all versions 
+  should be created in Jira. The plugin ensures, the -SNAPSHOT part of a version is stripped.
+  This one works for projects and its subprojects. The configuration
+  of username and password is taken out of your local settings xml. You can as well specify it
+  right in the plugin configuration.
+  FinalName will be the versions name. It is constructed from the artifact id and its version.
+  Having subprojects, this name will be constructed for every subproject you have. If you don't
+  set a final name, then the artifact id verions will be used.
+  Every released version will be release in Jira as well. The release goal only releases, when
+  the artifact version is in fact a release, meaning there is no -SNAPSHOT part in it.
+
++-----------+
+<plugin>
+	<groupId>org.tw</groupId>
+	<artifactId>jira-maven-plugin</artifactId>
+	<version>2.0</version>
+	<configuration>
+		<settingsXmlKey>jira</settingsXmlKey>
+		<projectLeader>tw</projectLeader>
+		<jiraURL>http://xxx/jira</jiraURL>
+		<jiraSkipCreation>false</jiraSkipCreation>
+		<jiraCorrectProjectKey>true</jiraCorrectProjectKey>
+		<finalNameUsedForVersion>true</finalNameUsedForVersion>
+		<finalName>${project.artifactId} ${project.version}</finalName>
+	</configuration>
+	<executions>
+		<execution>
+			<phase>deploy</phase>
+			<goals>
+				<goal>create-new-version</goal>
+				<goal>release-version</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
++-----------+
