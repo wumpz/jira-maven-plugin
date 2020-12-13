@@ -1,10 +1,10 @@
-#Jira Maven Plugin
+# Jira Maven Plugin
 
 First of all. If you dont be sure the plugins configuration is correct, then simply
 set jiraSkipCreation to true (look at the example at the bottom). The plugin will
 write out to the log what it would have done, but does in fact nothing else.
 
-##Why should I use it?
+## Why should I use it?
 
 If you manage your development using Jira then you probably have some kind of synchronization
 between your softwares version and the corresponding version in Jira. This plugin helps you to
@@ -22,11 +22,12 @@ Using this plugin I had only to deploy or release my software to maintain my Jir
 Nice. Isn't it? 
    
 
-##Example Configuration
+## Example Configuration
 
 This is an example configuration. You do not need a special profile, when all versions 
 should be created in Jira. 
-```
+
+```xml
 <plugin>
 	<groupId>org.tw</groupId>
 	<artifactId>jira-maven-plugin</artifactId>
